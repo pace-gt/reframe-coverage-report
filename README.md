@@ -108,7 +108,7 @@ This will print statements showing how modules are being parsed, categorized, an
 
 ## Output
 
-The script will output a file named `module_test_matrix.csv` in your working directory.
+The script will output a file named `test_coverage_matrix.csv` in your working directory.
 
 - Rows = Software modules
 - Columns = Programming environments (core, gcc, intel, gcc-mva2, gcc-ompi, etc.)
