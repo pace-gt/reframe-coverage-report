@@ -120,7 +120,7 @@ You can open this file with any spreadsheet program (Excel, Google Sheets, etc.)
 
 ##  Example Use Case
 
-Let’s say you're a system administrator at Georgia Tech and want to see whether the `netcdf-c` module has been tested under `intel` and `gcc-mva2`. After running the script, you’ll be able to check the output CSV and find that `netcdf-c` has test coverage under `gcc-mva2` but **not** under `intel`. This allows you to prioritize writing tests where they are missing.
+If you want to see whether the `netcdf-c` module has been tested under `intel` and `gcc-mva2`. After running the script, you’ll be able to check the output CSV and find that `netcdf-c` may have test coverage under `gcc-mva2` but **not** under `intel`, effectively allowing you to prioritize writing tests where they are missing.
 
 ---
 
