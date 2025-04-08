@@ -102,9 +102,18 @@ You can open this file with any spreadsheet program (Excel, Google Sheets, etc.)
 
 ---
 
-##  Example Use Case
+##  Example Use Case and Example Output
 
 If you want to see whether the `netcdf-c` module has been tested under `intel` and `gcc-mva2`. After running the script, you’ll be able to check the output CSV and find that `netcdf-c` may have test coverage under `gcc-mva2` but **not** under `intel`, effectively allowing you to prioritize writing tests where they are missing.
+
+Example Output
+Module,core,gcc,gcc-mva2,gcc-ompi,intel,intel-mva2,intel-ompi,nvhpc,nvhpc-hpcx
+eigen,1,1,0,0,1,0,0,0,0
+samtools,0,1,0,0,0,0,0,0,0
+papi,1,0,0,0,0,0,0,0,0
+matlab,1,0,0,0,0,0,0,0,0
+lammps,0,1,1,0,0,1,0,0,0
+
 
 ---
 
