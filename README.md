@@ -14,45 +14,42 @@ This script navigates these module hierarchies and cross-references the data wit
 
 ## Prerequisites
 
-- **Access to PACE**: This script is designed to run within the PACE HPC environment. You must be a Georgia Tech researcher with login access.
-- **ReFrame Installed**: The ReFrame testing framework must be installed and configured.
-- **Python 3.8+**: Used to execute the coverage script.
-- **PACE Module Access**: The module system should be accessible and the appropriate modules must be loaded.
+- Python 3.8+
+- ReFrame installed and accessible via `module load reframe`
+- Access to an HPC environment that uses the LMOD module system
 
 ---
 
 ## Directory Structure Assumptions
 
-This script assumes that PACE follows the typical `LMOD`-compliant hierarchy:
+The tool assumes your modulefiles follow the LMOD hierarchical pathing standard. These are typically structured as:
 
-```
-/usr/local/pace-apps/manual/packages/<app>/pace-modules/lmod/linux-rhel9-x86_64/Core/<app>/<version>.lua
-/usr/local/pace-apps/manual/packages/<app>/pace-modules/lmod/linux-rhel9-x86_64/<compiler>/<version>/<app>/<version>.lua
-/usr/local/pace-apps/manual/packages/<app>/pace-modules/lmod/linux-rhel9-x86_64/<mpi>/<mpi-version>/<compiler>/<compiler-version>/<app>/<version>.lua
+```text
+<path to module>/lmod/linux-rhel9-x86_64/Core/<app>/<version>.lua
+<path to module>/lmod/linux-rhel9-x86_64/<compiler>/<version>/<app>/<version>.lua
+<path to module>/lmod/linux-rhel9-x86_64/<mpi>/<mpi-version>/<compiler>/<compiler-version>/<app>/<version>.lua
 ```
 
 ---
 
 ##  How to Run the Coverage Matrix Script
 
-Follow these instructions to generate a test coverage matrix from a PACE login node.
+Follow these instructions to generate a test coverage matrix.
 
 ---
 
-### Step 1: SSH into PACE
+### Step 1: SSH into your HPC environment’s login node
 
 SSH into **Phoenix** using either of the following login nodes:
 
-```bash
-ssh <your-gt-username>@login-phoenix-rh9.pace.gatech.edu
-```
+ ```bash
+ ssh <your-username>@<login-node>
+ ```
 
-OR (dev node)
-
-```bash
-ssh <your-gt-username>@login-phx-dev-rh9.pace.gatech.edu
-```
-
+   Example nodes:
+   - `login-phx-dev-rh9`
+   - `login-phoenix-rh9`
+   - 
 ---
 
 ### Step 2: Navigate to Your ReFrame Directory
@@ -60,14 +57,14 @@ ssh <your-gt-username>@login-phx-dev-rh9.pace.gatech.edu
 Change into the directory containing your ReFrame installation and configuration:
 
 ```bash
-cd /path/to/your/reframe
+cd <path-to-your-reframe-directory>
 ```
 
 ---
 
 ### Step 3: Load ReFrame Module
 
-Load the ReFrame module provided by PACE. This makes the `reframe` command available and ensures proper paths are set:
+Load the ReFrame module. This makes the `reframe` command available and ensures proper paths are set:
 
 ```bash
 module load reframe
@@ -77,20 +74,14 @@ module load reframe
 
 ### Step 4: Run the Coverage Script
 
-The script used to generate the test coverage matrix is located in:
-
-```
-temp_utilities/test_coverage_matrix.py
-```
-
-Run it with the following command:
+Once you're in the ReFrame repository directory and have loaded the necessary modules, run the coverage matrix script using the following command format:
 
 ```bash
-python3 temp_utilities/test_coverage_matrix.py -C pace/config/settings.py
+python3 <path-to-script>/test_coverage_matrix.py -C <path-to-config>/settings.py
 ```
 
 - The `-C` flag specifies the path to your ReFrame configuration file.
-- This command will scan available modules and generate a CSV matrix showing whether each module has test coverage under each programming environment (core, gcc, intel, etc.).
+- This command will scan available modules and generate a CSV matrix showing whether each module has test coverage under each programming environment (i.e., core, gcc, intel, etc.).
 
 ---
 
@@ -99,7 +90,7 @@ python3 temp_utilities/test_coverage_matrix.py -C pace/config/settings.py
 For verbose output and internal debug logging, use the `--debug` flag:
 
 ```bash
-python3 temp_utilities/test_coverage_matrix.py -C pace/config/settings.py --debug
+python3 <path-to-script>/test_coverage_matrix.py -C <path-to-config>/settings.py
 ```
 
 This will print statements showing how modules are being parsed, categorized, and matched with existing tests.
