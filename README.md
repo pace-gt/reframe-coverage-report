@@ -124,11 +124,19 @@ If you want to see whether the `netcdf-c` module has been tested under `intel` a
 
 ---
 
-## 👥 Authors
+## 👥 Author
 
 **Edison Lee**  
 Bachelor of Science in Computer Science  
 Georgia Institute of Technology
+
+---
+## Acknowledgements
+
+This project was made possible thanks to the guidance and support of my advisors:
+
+- **Dr. Fang Liu**, Senior Research Scientist, Georgia Tech PACE
+- **Ronald Rahman**, Research Scientist II, Georgia Tech PACE
 
 ---
 
