@@ -40,16 +40,9 @@ Follow these instructions to generate a test coverage matrix.
 
 ### Step 1: SSH into your HPC environment’s login node
 
-SSH into **Phoenix** using either of the following login nodes:
-
  ```bash
  ssh <your-username>@<login-node>
  ```
-
-   Example nodes:
-   - `login-phx-dev-rh9`
-   - `login-phoenix-rh9`
-   - 
 ---
 
 ### Step 2: Navigate to Your ReFrame Directory
