@@ -1,6 +1,6 @@
 # reframe-coverage-report
 
-This utility is designed to generate a test coverage matrix for software modules within Georgia Tech’s High-Performance Computing (HPC) environment, PACE. The tool integrates with the [ReFrame](https://reframe-hpc.readthedocs.io/) testing framework and extracts information from installed module paths to determine which software modules have test coverage under different compiler and MPI environments.
+This utility is designed to generate a test coverage matrix for software modules within a HPC environment. The tool integrates with the [ReFrame](https://reframe-hpc.readthedocs.io/) testing framework and extracts information from installed module paths to determine which software modules have test coverage under different compiler and MPI environments.
 
 ---
 
