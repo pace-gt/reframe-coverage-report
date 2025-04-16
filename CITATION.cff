@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Test Coverage Matrix
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Edison
+    family-names: Lee
+    email: edisonydlee@gmail.com
+repository-code: 'https://github.com/pace-gt/reframe-coverage-report'
+abstract: >-
+  This utility is designed to generate a test coverage
+  matrix for software modules within a HPC environment. The
+  tool integrates with the ReFrame testing framework and
+  extracts information from installed module paths to
+  determine which software modules have test coverage under
+  different compiler and MPI environments.
